@@ -10,7 +10,7 @@ export default function Nav() {
         <li>
           <a href="/">
             <div class="flex flex-row gap-2 items-center">
-              <img src="/images/aleducation_logo.png" class="w-11 h11" />
+              <img src="/images/aleducation_logo.png" alt="Logo" class="w-11 h11" />
               <span class={`border-b-2 ${active("/")}`}><span class="text-red-500">ALED</span>UCATION</span>
             </div>
           </a>
