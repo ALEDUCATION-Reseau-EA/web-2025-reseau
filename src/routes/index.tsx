@@ -17,7 +17,7 @@ export default function Home() {
               Gaetan c'est vraiment le plus beau (mais c'est toujours de sa faute)
             </span>
             <div class="grid justify-items-end place-items-end">
-              <Button onClick={() => navigate("/formations")} >Voir les Formations</Button>
+              <Button onClick={() => navigate("/formations")} class="bg-gray-800" >Voir les Formations</Button>
             </div>
           </div>
         </CardContent>
