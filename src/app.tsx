@@ -12,6 +12,7 @@ export default function App() {
       root={props => (
         <>
           <Nav />
+          <div class="h-20" />
           <Suspense>{props.children}</Suspense>
         </>
       )}

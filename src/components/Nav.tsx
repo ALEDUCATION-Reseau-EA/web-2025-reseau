@@ -5,12 +5,12 @@ export default function Nav() {
   const active = (path: string) =>
     path == location.pathname ? "border-red-500" : "border-transparent hover:border-red-400";
   return (
-    <nav class="bg-gray-800 sticky">
+    <nav class="bg-gray-800 fixed w-full">
       <ul class="container flex justify-between w-full items-center p-3 text-gray-200">
         <li>
           <a href="/">
             <div class="flex flex-row gap-2 items-center">
-              <img src="/src/assets/aleducation_logo.png" class="w-11 h11" />
+              <img src="/images/aleducation_logo.png" class="w-11 h11" />
               <span class={`border-b-2 ${active("/")}`}><span class="text-red-500">ALED</span>UCATION</span>
             </div>
           </a>
