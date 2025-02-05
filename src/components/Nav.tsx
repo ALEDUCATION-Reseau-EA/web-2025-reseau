@@ -5,7 +5,7 @@ export default function Nav() {
   const active = (path: string) =>
     path == location.pathname ? "border-red-500" : "border-transparent hover:border-red-400";
   return (
-    <nav class="bg-gray-800 fixed w-full">
+    <nav class="bg-gray-800 fixed w-full z-50">
       <ul class="container flex justify-between w-full items-center p-3 text-gray-200">
         <li>
           <a href="/">
