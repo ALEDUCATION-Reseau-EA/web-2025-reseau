@@ -8,6 +8,7 @@ export default defineConfig({
             nodePolyfills(),
         ],
         server: {
+            preset: "node-server",
             allowedHosts: ['demo.kirato.dev', 'aleducation.be'],
         },
     }
