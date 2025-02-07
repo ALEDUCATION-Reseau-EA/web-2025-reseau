@@ -2,9 +2,24 @@ import { Carousel, CarouselContent, CarouselItem } from "~/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 import { Card } from "~/components/ui/card";
 import { For } from "solid-js";
-import { Separator } from "~/components/ui/separator"
+import { Separator } from "~/components/ui/separator";
+import { readdir } from 'node:fs/promises';
+import { createAsync, query } from "@solidjs/router";
+
+const getImages = query(async () => {
+  "use server";
+
+  return readdir(`${process.cwd()}/public/images/photos`);
+}, "images");
+
+export const route = {
+  preload: () => getImages(),
+};
+
 
 export default function About() {
+  const images = createAsync(() => getImages());
+
   return (
     <main class="flex flex-col text-center items-center mx-auto text-gray-800 p-4">
       <title>Qui? - Aleducation</title>
@@ -16,11 +31,11 @@ export default function About() {
           })
         ]}>
         <CarouselContent>
-          <For each={[...Array(10).keys()].map(foo => foo + 1)}>
+          <For each={images()}>
             {(item) =>
               <CarouselItem class="md:basis-1/2 lg:basis-1/3">
                 <Card>
-                  <img src={`/images/photos/${item}.jpg`} class="rounded" />
+                  <img src={`/images/photos/${item}`} class="rounded" />
                 </Card>
               </CarouselItem>
             }

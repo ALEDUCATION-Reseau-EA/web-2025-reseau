@@ -1,4 +1,3 @@
-import { useNavigate } from "@solidjs/router";
 import { createResource, createSignal, For } from "solid-js";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
@@ -29,13 +28,13 @@ export default function Formations() {
                     </SelectTrigger>
                     <SelectContent />
                 </Select>
-                {/* <div class="grid grid-cols-3 gap-4" >
+                <div class="grid grid-cols-3 gap-4" >
                     <For each={formations}>
                         {(formation) =>
                             <Card class="" >
                                 <CardHeader>
                                     <CardTitle>
-                                        Formation {formation}
+                                        Formation {formation.titre}
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
@@ -44,7 +43,7 @@ export default function Formations() {
                             </Card>
                         }
                     </For>
-                </div> */}
+                </div>
                 <div class="grid grid-cols-3 gap-4" >
                     <For each={[...Array(10).keys()].map(foo => foo + 1)}>
                         {(item) =>

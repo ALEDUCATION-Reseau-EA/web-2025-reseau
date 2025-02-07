@@ -19,7 +19,7 @@ export default function Nav() {
           <li class={`border-b-2 ${active("/formations")} mx-1.5 sm:mx-6 hover:text-red-400`}>
             <a href="/formations">Nos Formations</a>
           </li>
-          <li class={`border-b-2 border-transparent ${active("/formateurs")} mx-1.5 sm:mx-6 hover:text-red-400`}>
+          <li class={`border-b-2 ${active("/formateurs")} mx-1.5 sm:mx-6 hover:text-red-400`}>
             <a href="/formateurs">Nos Formateurs</a>
           </li>
           <li class={`border-b-2 ${active("/about")} mx-1.5 sm:mx-6 hover:text-red-400`}>
