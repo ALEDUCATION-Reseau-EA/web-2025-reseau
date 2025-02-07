@@ -5,11 +5,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~
 export default function Formations() {
     const [formations, { refetch }] = createResource(
         async () => {
-            const f = fetch("api/formations");
+            const f = await fetch("api/formations");
+            console.log(f);
             return f;
         }
     );
-    console.log(formations);
     const [value, setValue] = createSignal("");
     return (
         <main class="text-center mx-auto text-gray-800 p-4">
@@ -29,16 +29,16 @@ export default function Formations() {
                     <SelectContent />
                 </Select>
                 <div class="grid grid-cols-3 gap-4" >
-                    <For each={formations}>
+                    <For each={formations()}>
                         {(formation) =>
                             <Card class="" >
                                 <CardHeader>
                                     <CardTitle>
-                                        Formation {formation.titre}
+                                        {formation.titre}
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat lectus ut erat volutpat varius.
+                                    {formation.description}
                                 </CardContent>
                             </Card>
                         }
