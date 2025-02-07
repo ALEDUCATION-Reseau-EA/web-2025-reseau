@@ -5,11 +5,13 @@ import { For } from "solid-js";
 import { Separator } from "~/components/ui/separator";
 import { readdir } from 'node:fs/promises';
 import { createAsync, query } from "@solidjs/router";
+import { resolve } from "node:path";
 
 const getImages = query(async () => {
   "use server";
+  const path = resolve(__dirname, "../public/images/photos");
 
-  return readdir(`${process.cwd()}/public/images/photos`);
+  return readdir(path);
 }, "images");
 
 export const route = {
