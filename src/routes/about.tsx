@@ -9,7 +9,7 @@ import { createAsync, query } from "@solidjs/router";
 const getImages = query(async () => {
   "use server";
 
-  return readdir(`${process.cwd()}/public/images/photos`);
+  return readdir(`/public/images/photos`);
 }, "images");
 
 export const route = {
